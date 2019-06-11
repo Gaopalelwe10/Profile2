@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -8,13 +9,17 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+   username: string ="";
+   password: string ="";
+
   constructor(private router: Router) { }
 
+  onLogin(){
+    this.router.navigate(["/detail"],{ queryParams: {username:this.username , password:this.password } })
+    
+  }
 
-  // onlogin(){
-  //   this.router.navigateByUrl("menu")
-  // }
-
+  // this.router.navigateByUrl()
   ngOnInit() {
   }
 
